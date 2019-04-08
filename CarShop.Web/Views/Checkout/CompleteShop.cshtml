@@ -1,0 +1,58 @@
+﻿
+@{
+    ViewBag.Title = "CompleteShop";
+
+}
+@model  IEnumerable<CarShop.Model.MainPage>
+@{
+    ViewBag.Title = "Home Page";
+}
+
+
+<link rel="stylesheet" type="text/css" href="~/styles/checkout.css">
+<link rel="stylesheet" type="text/css" href="~/styles/checkout_responsive.css">
+
+<div class="home">
+    <div class="home_container">
+        <div class="home_background" style="background-image:url(/images/cart.jpg)"></div>
+        <div class="home_content_container">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <div class="home_content">
+                            <div class="breadcrumbs">
+                                <ul>
+                                    <li><a href="@Url.Action("Index","Home")">Anasayfa</a></li>                                   
+                                    <li>Ödeme</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="checkout">
+    <div class="container">
+        <div class="row">
+
+
+
+            <div class="col-lg-8">
+                <div class="order ">
+
+
+                    <div class="section_title">Siparişiniz Alınmıştır.</div>
+                    <div class="section_subtitle">Alışverişinizde Bizi Tercih Ettiğiniz İçin Teşekkür Ederiz.</div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+  

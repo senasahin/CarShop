@@ -1,0 +1,68 @@
+﻿@model IEnumerable<CarShop.Model.ApplicationUser>
+
+@{
+    ViewBag.Title = "Kullanıcılar";
+}
+
+<!-- ============================================================== -->
+<!-- pageheader  -->
+<!-- ============================================================== -->
+<h2 class="pageheader-title">Kullanıcılar</h2>
+<div class="page-breadcrumb">
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb"></ol>
+    </nav>
+</div>
+<!-- ============================================================== -->
+<!-- end pageheader  -->
+<!-- ============================================================== -->
+<p>
+    <button type="button" class="btn btn-success"> @Html.ActionLink("Yeni Kullanıcı Ekle", "Register","Account") </button>
+
+</p>  
+
+@if (TempData["CurrentUser"] != null)
+{
+    <script type="text/javascript">
+        window.onload = function () {
+                alert("@TempData["CurrentUser"]");
+            };
+    </script>
+}
+@if (TempData["NullUser"] != null)
+{
+    <script type="text/javascript">
+        window.onload = function () {
+                alert("@TempData["NullUser"]");
+            };
+    </script>
+}
+
+<!--jquery data Table 'ın Düzgün çalışması için, "th"lerin sayısı ile "td"lerin sayısı eşit olmalı -->
+    <table class="table" id="myTable">
+        <thead>
+            <tr>
+                <th>
+                    E-Posta
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+
+                        @Html.DisplayFor(modelItem => item.Email)
+                    </td>
+                    <td>
+                        <a href="@Url.Action("Edit", new { id = item.Id})" class="btn btn-primary btn-xs">Düzenle</a>
+                        <a href="@Url.Action("Delete", new { id = item.Id})" class="btn btn-danger btn-xs">Sil</a>
+                    </td>
+
+
+                </tr>
+            }
+        </tbody>
+    </table>
